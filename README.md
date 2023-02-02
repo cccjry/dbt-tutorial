@@ -10,6 +10,16 @@ Try running the following commands:
 - `dbt docs generate`: generate doc file in json file
 - `dbt docs serve`: open doc file in browser
 
+### Some Tips
+
+- Inside *dbt_project.yml*, the models configuration setting level is the same as the files indside models directory. For example:
+    ```python
+    models:
+        jaffle_shop: # dbt project: top level
+            +materialized: table
+            staging: # sub-model level: staging
+                +materialized: table
+    ```
 
 ### Resources:
 - Source sample data [GitHub](https://github.com/dbt-labs/jaffle_shop)
