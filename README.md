@@ -3,12 +3,12 @@ Welcome to your new dbt project!
 ### Using the starter project
 
 Try running the following commands:
-- dbt seed: add data from sources inside models/seeds
-- dbt debug: to confirm that you can successfully connect
-- dbt run: run all model-sql inside models; select specific model by using --select option
-- dbt test: test all criterions within schema.yaml file
-- dbt docs generate: generate doc file in json file
-- dbt docs serve: open doc file in browser
+- `dbt seed`: add data from sources inside models/seeds
+- `dbt debug`: to confirm that you can successfully connect
+- `dbt run`: run all model-sql inside models; select specific model by using --select option
+- `dbt test`: test all criterions within schema.yaml file
+- `dbt docs generate`: generate doc file in json file
+- `dbt docs serve`: open doc file in browser
 
 
 ### Resources:
