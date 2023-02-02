@@ -33,3 +33,26 @@ models:
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+models:
+  - name: list_alldatatables
+    description: List all data table within dbt_jerrychen schema
+    columns:
+      - name: schemaname
+        description: Which schema from
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['dbt_jerrychen']
+      - name: datatablename
+        description: Data table name
+        tests:
+          - not_null
+      - name: owner
+        description: Data table ownership
+        tests:
+          - not_null
+      - name: material
+        description: From views or tables
+        tests:
+          - not_null
