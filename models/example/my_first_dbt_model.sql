@@ -20,17 +20,11 @@ with source_data as (
 source_data2 as (
 
     select 2 as id
-    union ALL
-    select null as id
 
 )
 
 select * from source_data
+where source_data.id is not null
+
 union
 select * from source_data2
-
-/*
-    Uncomment the line below to remove records with null `id` values
-*/
-
--- where id is not null
