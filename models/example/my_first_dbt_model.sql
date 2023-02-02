@@ -15,13 +15,16 @@ with source_data as (
     union all
     select null as id
 
+),
+
+source_data2 as (
+
+    select 2 as id
+
 )
 
-select *
-from source_data
+select * from source_data
+where source_data.id is not null
 
-/*
-    Uncomment the line below to remove records with null `id` values
-*/
-
--- where id is not null
+union
+select * from source_data2
