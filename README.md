@@ -2,6 +2,7 @@ Welcome to your new dbt project!
 
 ### Using the starter project
 
+#### Basics
 Try running the following commands:
 - `dbt seed`: add data from sources inside models/seeds
 - `dbt debug`: to confirm that you can successfully connect
@@ -9,6 +10,11 @@ Try running the following commands:
 - `dbt test`: test all criterions within schema.yaml file
 - `dbt docs generate`: generate doc file in json file
 - `dbt docs serve`: open doc file in browser
+
+#### Flags
+
+- `-s`, `--select`: select specific models, seeds, directories
+- `--target`: select target defined within profile.yml
 
 ### Some Tips
 
