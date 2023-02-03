@@ -18,17 +18,26 @@ Try running the following commands:
 
 ### Some Tips
 
-- Inside *dbt_project.yml*, the models configuration setting level is the same as the files indside models directory. For example:
-    ```python
+- **Correspondence of yml and data folder**: Inside *dbt_project.yml*, the models configuration setting level is the same as the files indside models directory. For example:
+    ```YAML
     models:
         jaffle_shop: # dbt project: top level
             +materialized: table
             staging: # sub-model level: staging
                 +materialized: table
     ```
+- **Override setups of profile.yml**: Like basic model configuration section in `dbt_project.yml`, you can also setup for seed even including column types E.g.
+    ```YAML
+    seeds:
+        jaffle_shop:
+            +schema: view
+            raw_customers:
+                +column_types:
+                    first_name: char(2)
+    ```
 
 ### Resources:
-- Source sample data [GitHub](https://github.com/dbt-labs/jaffle_shop)
+- Source file in `seeds` came from here: [Jaffle-Shop GitHub](https://github.com/dbt-labs/jaffle_shop)
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
 - Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
