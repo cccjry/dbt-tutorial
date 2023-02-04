@@ -92,6 +92,10 @@ E.g.
 ```
 In this case, we set the macro not to concatenate the schema name.
 
+The schema name is decided by following the order:
+
+> ***Inside-model-configuration*** > ***dbt_project.yml*** > ***profile.yml***
+
 - **Top-Level**: Configure inside models (*.sql): this will override any other setting
   
   ```SQL
