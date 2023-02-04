@@ -69,7 +69,28 @@ rd_data_team:
 
 ### Schema Setup
 
-The schema in dbt is set as `<target_schema>_<custom_schema>` by default.
+The schema in dbt is set as `<target_schema>_<custom_schema>` by default. To customize schema name, you have to add a macro under macro folder.
+
+E.g.
+
+```SQL
+--macro/generate_schema_name.sql
+{% macro generate_schema_name(custom_schema_name, node) -%}
+
+    {%- set default_schema = target.schema -%}
+    {%- if custom_schema_name is none -%}
+
+        {{ default_schema }}
+
+    {%- else -%}
+
+        {{ custom_schema_name | trim }}
+
+    {%- endif -%}
+
+{%- endmacro %}
+```
+In this case, we set the macro not to concatenate the schema name.
 
 - **Top-Level**: Configure inside models (*.sql): this will override any other setting
   
