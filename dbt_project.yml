@@ -15,7 +15,7 @@ profile: 'jaffle_shop'
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
-seed-paths: ["seeds"]
+seed-paths: ["data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
@@ -33,6 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   jaffle_shop:
+    schema: dbt_jerrychen
     +materialized: table
     staging:
       +materialized: table
@@ -41,3 +42,9 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+# Seeds
+# override column data types
+seeds:
+  jaffle_shop:
+    +schema: public
